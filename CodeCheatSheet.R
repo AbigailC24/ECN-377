@@ -12,7 +12,18 @@ sd()
 cor(x,y)
 #covariance
 cov()
-  #Probability
+
+xj <- c(0,0,1,1)        # x across pairs (0,0) (0,1) (1,0) (1,1)
+yj <- c(0,1,0,1)        # y across those same pairs
+pj <- rep(1/4,4)        # probability of each pair
+EXY <- sum(xj*yj*pj) 
+EX= sum(xj*pj)  # E[XY]                 -- same idea, weight xj*yj
+EY = sum(yj*pj)
+CovXY <- EXY-EX*XY     # Cov = E[XY] - E[X]*E[Y]    -- independent, so expect 0
+  
+
+#Probability
+
 #X, E[X]    (X*probability) + (X*probability)
 x = c(1,2) p = c(1/2,1/2)   sum(x*p)
 
@@ -30,3 +41,97 @@ x = c(1,2,) p = (.5,.5) sum(x^2*p)
 # X and Y are independent Var(X,Y)= ?  Var(X,Y) = Var(X+Var(Y) + 2Cov(X,Y)
 
 # Cov(X,Y) = E[X,Y] - E
+
+#OLS Slpoe
+  # Enter the data
+  x <- c(5, 6, 8)
+  y <- c(9, 12, 12)
+
+  # Find the means
+  xbar <- mean(x)
+  ybar <- mean(y)
+  
+  # Calculate the numerator
+  numerator <- sum((x - xbar) * (y - ybar))
+
+  # Calculate the denominator
+  denominator <- sum((x - xbar)^2)
+
+  # OLS slope
+  b1 <- numerator / denominator
+
+  # Round to hundredths
+  round(b1, 2)
+  
+#Find OLS Intercept
+  # Enter the data
+  x <- c(7, 4, 4)
+  y <- c(2, 1, 0)
+  
+  # Find the OLS slope
+  b1 <- cov(x, y) / var(x)
+  
+  # Find the intercept
+  b0 <- mean(y) - b1 * mean(x)
+  
+  # Round to hundredths
+  round(b0, 2)
+
+    
+#Fit the OLS line
+  x <- c(4, 6, 6)
+  y <- c(10, 8, 5)
+  
+  # Fit OLS regression
+  model <- lm(y ~ x)
+  
+  # Predict y when x = 7
+  predict(model, newdata = data.frame(x = 7))
+  
+  
+#Joint Probability Distribution
+  x <- c(5, 4, 3)
+  y <- c(5, 1, 2)
+  p <- c(0.2, 0.3, 0.5)
+  
+  # Expected values
+  EX <- sum(x * p)
+  EY <- sum(y * p)
+  
+  # Expected value of XY
+  EXY <- sum(x * y * p)
+  
+  # Covariance
+  covXY <- EXY - EX * EY
+  
+  round(covXY, 2)
+  
+  
+#Population Regression Slope
+  x <- c(3, 1, 6)
+  y <- c(7, 0, 0)
+  p <- c(0.2, 0.3, 0.5)
+  
+  # Expected values
+  EX <- sum(x * p)
+  EY <- sum(y * p)
+  
+  # Covariance
+  EXY <- sum(x * y * p)
+  covXY <- EXY - EX * EY
+  
+  # Variance of X
+  EX2 <- sum(x^2 * p)
+  varX <- EX2 - EX^2
+  
+  # Population regression slope
+  beta1 <- covXY / varX
+  
+  round(beta1, 2)
+  
+#Calculate Sample Covariance from data
+  x <- c(6, 3, 1)
+  y <- c(0, 4, 1)
+  
+  cov(x, y)
+  
