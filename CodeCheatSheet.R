@@ -78,16 +78,13 @@ x = c(1,2,) p = (.5,.5) sum(x^2*p)
   round(b0, 2)
 
     
-#Fit the OLS line
-  x <- c(4, 6, 6)
-  y <- c(10, 8, 5)
-  
-  # Fit OLS regression
-  model <- lm(y ~ x)
-  
-  # Predict y when x = 7
-  predict(model, newdata = data.frame(x = 7))
-  
+#Fit the OLS line (predictions with OLS line)
+x <- c(4, 8, 2)
+y <- c(4, 2, 2)
+
+b1 = cov(x,y) / var(x)
+b0 = mean(y) - mean(x) * b1
+b0 - b1 * 10
   
 #Joint Probability Distribution
   x <- c(5, 4, 3)
