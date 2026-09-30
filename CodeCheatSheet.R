@@ -1,3 +1,13 @@
+#prediction w/ OLS
+x = c()
+y = c()
+reg = lm(y~x)
+b0 = reg$coefficients[1]
+b1 = reg$coefficients[2]
+b0 + b1 * x
+
+
+
 #find SSR with sample data
 x = c(5,10,4)
 y = c(9,13,9)
