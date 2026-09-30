@@ -1,3 +1,20 @@
+#Find the OLS residual of a fitted line
+# Given values
+x <- 8
+y <- 19
+
+# Calculate the predicted y
+y_hat <- -3 + (8/10) * x
+y_hat
+# Calculate the residual
+u_hat <- y - y_hat
+
+# Round to hundredths
+round(u_hat, 2)
+
+
+
+
 #prediction w/ OLS
 x = c()
 y = c()
