@@ -1,5 +1,31 @@
 #b1 = cov(X,Y)/var()
-#
+#OLS Slope
+# Enter the data
+x <- c(8, 8, 3)
+y <- c(4, 3, 4)
+
+# Find the means
+x_bar <- mean(x)
+y_bar <- mean(y)
+
+# Calculate the numerator
+numerator <- sum((x - x_bar) * (y - y_bar))
+
+# Calculate the denominator
+denominator <- sum((x - x_bar)^2)
+
+# Calculate the OLS slope
+beta1 <- numerator / denominator
+
+# Round to hundredths
+round(beta1, 2)
+
+
+
+
+
+
+
 #**Always remember to create a vector! x = c()
 
 #mean of values
