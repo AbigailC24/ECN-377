@@ -1,3 +1,5 @@
+#b1 = cov(X,Y)/var()
+#
 #**Always remember to create a vector! x = c()
 
 #mean of values
