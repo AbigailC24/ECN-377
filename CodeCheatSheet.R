@@ -1,3 +1,13 @@
+#find SSR with sample data
+x = c(5,10,4)
+y = c(9,13,9)
+b0 = 0
+b1 = 4/10
+fitted_vals = b0 + b1 * x
+resids = y - fitted_vals
+sum(resids^2)
+
+
 #b1 = cov(X,Y)/var()
 #OLS Slope
 # Enter the data
