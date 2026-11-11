@@ -294,6 +294,11 @@ sum(resids^2)
 # Cov(X,Y) = E[X,Y] - E
 
 
+#Q3 Given E[X] and E[X^2] find the standard deviation of 2X-1
+Var <- E[X^2]-(E[X])^2
+sd <- sqrt(Var)
+SD(2X-1) = |2|*6 #SD(2X-1) = |a| * sd(X)
+
 
 
 
